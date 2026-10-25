@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Conversor de monedas</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <h1>Conversor de monedas</h1>
+
+    <form id="formulario" novalidate>
+      <label for="monto">Monto</label>
+      <input id="monto" type="text" inputmode="decimal" autocomplete="off" placeholder="0,00" autofocus>
+
+      <div class="monedas">
+        <div class="campo">
+          <label for="origen">De</label>
+          <select id="origen" disabled><option>Cargando...</option></select>
+        </div>
+
+        <button id="invertir" type="button" aria-label="Invertir monedas" title="Invertir monedas" disabled>⇄</button>
+
+        <div class="campo">
+          <label for="destino">A</label>
+          <select id="destino" disabled><option>Cargando...</option></select>
+        </div>
+      </div>
+
+      <button id="convertir" type="submit" disabled>Convertir</button>
+    </form>
+
+    <p id="estado" role="status" aria-live="polite"></p>
+    <p id="mensaje" role="alert"></p>
+    <button id="reintentar" type="button" hidden>Reintentar</button>
+
+    <section id="resultado" aria-live="polite" hidden>
+      <p id="conversion"></p>
+      <p id="tasa"></p>
+      <p id="fecha"></p>
+    </section>
+  </main>
+
+  <script type="module" src="src/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: #f4f6fa;
+  color: #1c2434;
+}
+
+main {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+h1 {
+  font-size: 1.4rem;
+  margin: 8px 0 16px;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+input,
+select,
+button {
+  font: inherit;
+  font-size: 16px; /* evita el zoom automático en el celular */
+  width: 100%;
+  min-height: 44px;
+  padding: 8px 10px;
+  border: 1px solid #b8c0d0;
+  border-radius: 8px;
+  background: #fff;
+  color: inherit;
+}
+
+input { margin-bottom: 16px; }
+
+.monedas {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.campo {
+  flex: 1;
+  min-width: 0;
+}
+
+#invertir {
+  width: 48px;
+  flex: none;
+  padding: 0;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+#convertir,
+#reintentar {
+  background: #2457d6;
+  border-color: #2457d6;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#reintentar { margin-top: 8px; }
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+#estado { color: #4a5568; min-height: 1.2em; margin: 12px 0 0; }
+
+#mensaje {
+  color: #b00020;
+  font-weight: 600;
+  margin: 12px 0 0;
+}
+
+#mensaje:empty { display: none; }
+
+#resultado {
+  margin-top: 16px;
+  padding: 16px;
+  background: #fff;
+  border: 1px solid #b8c0d0;
+  border-radius: 8px;
+  overflow-wrap: anywhere;
+}
+
+#resultado p { margin: 0 0 6px; }
+#resultado p:last-child { margin-bottom: 0; }
+
+#conversion {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+#tasa,
+#fecha { color: #4a5568; }
+
+[hidden] { display: none !important; }

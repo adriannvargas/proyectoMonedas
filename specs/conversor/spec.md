@@ -46,7 +46,7 @@ Formato EARS. Cada criterio es un requisito verificable. Los criterios llevan id
 - **CA-1.** El sistema DEBE ofrecer como moneda de origen y de destino todas las monedas disponibles, incluyendo como mínimo USD, EUR, BRL, GBP y MXN.
 - **CA-2.** El sistema DEBE mostrar cada opción de moneda con su código y su nombre, con el formato "EUR – Euro".
 - **CA-3.** El sistema DEBE ordenar la lista de monedas con USD, EUR, BRL, GBP y MXN primero (en ese orden) y el resto en orden alfabético por código.
-- **CA-4.** CUANDO el usuario escriba en la lista de monedas, el sistema DEBE saltar a la opción que coincida con lo escrito (por código o por nombre).
+- **CA-4.** CUANDO el usuario escriba en la lista de monedas, el sistema DEBE saltar a la opción cuyo código empiece con lo escrito (por ejemplo, escribir "eur" lleva a "EUR – Euro").
 - **CA-5.** CUANDO la aplicación se abra y la lista de monedas esté disponible, el sistema DEBE seleccionar USD como moneda de origen y EUR como moneda de destino.
 
 ### 4.2 Ingreso y validación del monto
