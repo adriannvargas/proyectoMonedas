@@ -99,6 +99,7 @@ Formato EARS. Cada criterio es un requisito verificable. Los criterios llevan id
 - **CA-36.** CUANDO el usuario use un dispositivo con teclado en pantalla, el sistema DEBE abrir un teclado numérico que permita escribir la coma y el punto decimal en el campo del monto.
 - **CA-37.** CUANDO la aplicación se abra, el sistema DEBE colocar el cursor en el campo del monto.
 - **CA-38.** El sistema DEBE mostrar todos los textos, etiquetas y mensajes en español, sin opción de cambiar el idioma.
+- **CA-39.** CUANDO el usuario abra la dirección de la aplicación, el sistema DEBE mostrar directamente el conversor, sin pantallas intermedias ni listados de carpetas.
 
 ## 5. Fuera de alcance
 

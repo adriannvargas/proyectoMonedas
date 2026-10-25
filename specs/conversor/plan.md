@@ -7,7 +7,18 @@ Estado: aprobado por el usuario (Fase 2). Cubre el CÓMO de `spec.md`.
 - **HTML + CSS + JavaScript puro** (módulos ES), sin framework ni paso de compilación. Es una sola pantalla; un framework solo sumaría complejidad.
 - **Tests:** ejecutor integrado de Node (`node --test`, módulo `node:test`), sin dependencias. La lógica (validación, formato, cliente de datos) vive en módulos puros que se prueban sin navegador.
 - **Pruebas de la interfaz:** con un DOM simulado mínimo escrito a mano en los tests solo si hace falta; la lógica del controlador se separa de `document` para poder probarla sin DOM.
-- Servir con cualquier servidor estático (`npx serve`, `python -m http.server`) o abriendo `index.html` desde un servidor local, porque los módulos ES no cargan por `file://`.
+- Los módulos ES no cargan por `file://`, así que la app se sirve con un servidor estático levantado **desde la raíz del repositorio** (la carpeta que contiene `index.html`). Así la dirección raíz muestra directamente el conversor (CA-39).
+
+### Cómo ejecutar
+
+```
+npm test                 # tests, sin red
+npx serve .              # desde la raíz del repo; abrir la dirección que muestre (p. ej. http://localhost:3000)
+```
+
+Alternativa sin instalar nada: `python -m http.server 8000` desde la raíz y abrir `http://localhost:8000`.
+
+La raíz del repositorio es la carpeta con `.git`, `index.html` y `package.json`. No debe existir una carpeta `proyectoMonedas/` anidada dentro: si el servidor se levanta un nivel más arriba, aparece un listado de carpetas en vez del conversor.
 
 ## 2. Estructura de carpetas
 
