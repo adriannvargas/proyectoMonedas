@@ -91,3 +91,16 @@ test('404 en la lista de monedas se trata como falla del servicio', async () => 
   const api = apiCon(async () => respuesta(404, { message: 'not found' }));
   await assert.rejects(api.obtenerMonedas(), ErrorServicio);
 });
+
+test('CA-30/32: las peticiones obligan al navegador a revalidar, nunca usan una tasa guardada sin red', async () => {
+  const opciones = [];
+  const api = apiCon(async (url, o) => {
+    opciones.push(o.cache);
+    return url.endsWith('/currencies')
+      ? respuesta(200, { USD: 'United States Dollar' })
+      : respuesta(200, { date: '2026-10-23', rates: { EUR: 0.9 } });
+  });
+  await api.obtenerMonedas();
+  await api.obtenerTasa('USD', 'EUR');
+  assert.deepEqual(opciones, ['no-cache', 'no-cache']);
+});

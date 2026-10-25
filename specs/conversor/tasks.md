@@ -13,3 +13,4 @@ Estado: aprobado por el usuario (Fase 3). Una tarea a la vez, un commit por tare
 | T-7 | Pantalla: `index.html`, `styles.css`, `src/app.js` conectando el DOM (lista con escritura, Enter, teclado numérico, foco inicial, español, diseño desde 360 px). | CA-4, CA-35, CA-36, CA-37, CA-38 | Claude |
 | T-8 | Prueba manual en navegador, en computadora y en celular, con internet real y con la red cortada: tiempo < 3 s y diseño a 360 px. | CA-21, CA-35, CA-36, CA-37 | Usuario |
 | T-9 | Corregir la raíz del repositorio: el proyecto estaba dentro de una carpeta `proyectoMonedas/` anidada y al servir la carpeta externa aparecía un listado en vez del conversor. Se sube todo a la raíz y se documenta cómo ejecutar. | CA-39 | Claude |
+| T-10 | Evitar que el navegador reutilice tasas guardadas en su caché: sin red debe verse "No hay conexión", nunca un resultado. Hallado al automatizar T-8 con Playwright. | CA-30, CA-32 | Claude |

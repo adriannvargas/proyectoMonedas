@@ -12,7 +12,7 @@ export function crearApi({ fetch: fetchFn = globalThis.fetch, base = BASE, tiemp
     try {
       let respuesta;
       try {
-        respuesta = await fetchFn(`${base}${ruta}`, { signal: control.signal });
+        respuesta = await fetchFn(`${base}${ruta}`, { signal: control.signal, cache: 'no-cache' });
       } catch {
         throw new ErrorConexion('Sin conexión o tiempo agotado');
       }

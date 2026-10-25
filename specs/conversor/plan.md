@@ -58,6 +58,7 @@ Base: `https://api.frankfurter.dev/v1`
 - Los nombres vienen en inglés; se muestran en español con `Intl.DisplayNames(['es'], { type: 'currency' })`, con el nombre de la API como respaldo (CA-2).
 - **PA-1 (BOB):** verificado, el servicio NO ofrece BOB hoy. Como la lista sale de `/currencies`, aparecerá sola si algún día se agrega. La spec no cambia.
 - Un par sin tasa responde 404 `{"message":"not found"}` (por ejemplo moneda desconocida).
+- El servicio responde con `cache-control: public, max-age=86400`. Si el navegador usara su caché, sin red mostraría una tasa guardada en vez del error (contra CA-30 y CA-32). Por eso todas las peticiones usan `cache: 'no-cache'`: el navegador revalida con el servidor cada vez y, sin red, falla y se muestra el mensaje de conexión.
 
 ## 4. Manejo de errores
 
